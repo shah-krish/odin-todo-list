@@ -1,0 +1,51 @@
+body{
+    background-color:  #F2F3F4;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.mainWrapper{
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    width: 70%;
+}
+.top{
+    display: flex;
+    /* border: 2px solid blue; */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.bottom{
+    display: flex;
+    /* border: 2px solid blue; */
+    justify-content: space-between;
+    gap: 20px;
+}
+.projects{
+    width: 35%;
+    background-color: white;
+    border-radius: 8px;
+}
+.todos{
+    width: 65%;
+    /* border: 2px solid brown; */
+    background-color: white;
+    border-radius: 8px;
+}
+.mainHeading{
+    color: #8B4513;
+    font-size: 30px;
+}
+.newButtons button{
+    background-color: #8B4513;
+    color: white;
+    border: #8B4513;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: 550;
+}
