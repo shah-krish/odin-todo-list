@@ -71,12 +71,49 @@ function displayProject() {
         container.remove();
     });
 
+    projectDiv.addEventListener("click", () => displayTask(projectName));
+
     buttonDiv.appendChild(deleteButton);
     container.appendChild(projectDiv);
     container.appendChild(buttonDiv);
     displayArea.appendChild(container);
 }
+function displayTask(projectName) {
+    const displayArea = document.querySelector(".todoNames");
+    let taskList = tasks.get(projectName) || [];
 
+    if(taskList.length!=0){}
+    displayArea.innerHTML = "";
+
+    const container = document.createElement("div");
+    container.className = "taskContainer";
+
+    for (let i = 0; i < taskList.length; i++) {
+        const taskDiv = document.createElement("div");
+        taskDiv.className = "taskDiv";
+        taskDiv.textContent = taskList[i];
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "deleteButtonTask";
+        deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", () => {
+
+            taskList.splice(i, 1); 
+            tasks.set(projectName, taskList); 
+
+            taskDiv.remove();
+
+            // Optionally, re-display all tasks (safer if deletion affects indices)
+            // displayTask(projectName);
+        });
+
+        taskDiv.appendChild(deleteButton);
+        container.appendChild(taskDiv);
+    }
+
+    displayArea.appendChild(container);
+}
 const addProj = document.querySelector(".newProject");
 addProj.addEventListener("click", addProject);
 const addT = document.querySelector(".newList");
