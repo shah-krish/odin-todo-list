@@ -30,12 +30,38 @@ body{
     width: 35%;
     background-color: white;
     border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .todos{
     width: 65%;
     /* border: 2px solid brown; */
     background-color: white;
     border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.projHeading, .todoHeading{
+    font-size: 22px;
+}
+.projectNames{
+    display: grid;
+    /* grid-template-columns: 1fr auto; */
+    gap: 25px;
+    align-items: center;
+}
+.projectContainer{
+    display: grid;  
+    grid-template-columns: 1fr auto;
+
+}
+.projectDiv{
+    background-color: #8B4513;
+    max-width: 65%;
+    border-radius: 6px;
+    padding-left: 10px;
+    color: white;
+    
 }
 .mainHeading{
     color: #8B4513;
@@ -48,4 +74,10 @@ body{
     border-radius: 4px;
     padding: 10px;
     font-weight: 550;
+}
+.deleteButton{
+    background-color: #8B4513;
+    color: white;
+    border: #8B4513;
+    border-radius: 4px;
 }

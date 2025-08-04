@@ -7,6 +7,7 @@ function addProject(){
     if(name!=null){
         projects.push(name);
     }
+    displayProject();
     console.log("projects = "+projects);
 }
 
@@ -44,8 +45,41 @@ function saveTask(){
     console.log(tasks); */
 }
 
+function displayProject() {
+    const displayArea = document.querySelector(".projectNames");
+    const projectName = projects[projects.length - 1]; 
+
+    const container = document.createElement("div");
+    container.className = "projectContainer";
+
+    const projectDiv = document.createElement("div");
+    projectDiv.className = "projectDiv";
+    projectDiv.textContent = projectName;
+
+    const buttonDiv = document.createElement("div");
+    buttonDiv.className = "buttonDiv";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "deleteButton";
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", () => {
+        const index = projects.indexOf(projectName);
+        if (index !== -1) {
+            projects.splice(index, 1);
+        }
+        container.remove();
+    });
+
+    buttonDiv.appendChild(deleteButton);
+    container.appendChild(projectDiv);
+    container.appendChild(buttonDiv);
+    displayArea.appendChild(container);
+}
+
 const addProj = document.querySelector(".newProject");
 addProj.addEventListener("click", addProject);
 const addT = document.querySelector(".newList");
 addT.addEventListener("click", addTask);
+
 
